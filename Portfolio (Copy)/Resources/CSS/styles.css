@@ -1,0 +1,326 @@
+html{
+ font-size: 16px;
+ font-family: "League Spartan", sans-serif;
+ font-optical-sizing: auto;
+ font-style: normal; 
+ color: whitesmoke;
+}
+
+:root {
+  
+  --main-color1: whitesmoke;
+  --main-color2: #338bc6;
+
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('../images/6221822.jpg');
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    line-height: 1.5;
+}
+
+/*nav styling*/
+.nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+nav ul {
+  display: flex;
+  justify-items: flex-end;
+  text-align: right;
+  list-style-type: none;
+
+
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+ 
+  color: white;
+  padding: 0.5em 1em;
+  text-decoration: none;
+
+}
+
+nav {
+  
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  padding: 20px 10px;
+
+}
+
+nav a {
+  color: var(--main-color1);
+  text-decoration: none;
+  margin-right: 10px;
+  display: inline-block; 
+  padding: 5px 10px;
+  
+}
+
+nav a:hover {
+  color: var(--main-color2);
+
+}
+
+/*nav mobile view*/
+
+@media screen and (max-width: 767px) {
+  .nav-bar {
+    display: flex;
+    justify-content: flex-end; /* Aligns items to the right */
+    align-items: center;
+    background-color: #333; /* Example background color */
+    color: white; /* Example text color */
+    padding: 10px 20px;
+  }
+  
+  .nav-links {
+    display: none; /* Hide nav-links by default on mobile */
+    position: absolute;
+    top: 100%; /* Position below the navbar */
+    right: 0; /* Align to the right */
+    background-color: #333; /* Same background color as navbar */
+    z-index: 1000; /* Ensure it's above other content */
+  }
+  
+  .nav-links.open {
+    display: block; /* Display nav-links when .open class is added */
+  }
+  
+  .nav-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links ul li {
+    margin: 10px 0; /* Adjust spacing between menu items */
+  }
+  
+  .nav-links ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+  }
+  
+  /* Hamburger Icon */
+  .hamburger {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .hamburger .fa-bars {
+    color: white; /* Ensure the icon color matches your design */
+  }
+  
+  .hamburger.open .fa-bars {
+    transform: rotate(90deg); /* Example animation for the hamburger icon */
+  }
+}
+
+
+
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 2.5rem;
+
+  
+}
+
+.title h1 {
+    font-weight: 900;
+}
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  max-width: 32rem;
+  padding-top: 0.5rem;
+}
+
+.about p {
+  font-family: "League Spartan";
+  font-weight: 400;
+}
+
+.skills {
+  display: flex; 
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  max-width: 32rem;
+  padding: 0;
+}
+
+.skills p {
+  font-family: "League Spartan";
+  font-weight: 400;  
+}
+
+.sd {
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  align-items: center;
+  max-width: 32rem;
+  padding: 0;
+}
+
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+}
+
+.icons i {
+  padding: 0.62rem 0.62rem;
+  transform: scale(1.5);
+}
+
+.image {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 0.62rem;
+}
+
+img {
+ border-radius: 50%;
+ max-height: 100px;
+ max-width: 100px;
+}
+
+.icon-bar {
+  position: fixed;
+  top: 50%; /* Vertically center the bar */
+  left: 0; /* Align the bar to the left side of the screen */
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background-color: #333; /* Example background color */
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+  display: block;
+  text-align: center; /* Center align text within the links */
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+  text-decoration: none; /* Remove underline from links */
+}
+
+/* Style the social media icons with color */
+.icon-bar a:hover {
+  background-color: #000; /* Darken background color on hover */
+}
+
+/* Individual social media styles */
+.facebook {
+  background: black;
+}
+
+.twitter {
+  background: black;
+}
+
+.google {
+  background: black;
+}
+
+.linkedin {
+  background: black;
+}
+
+.youtube {
+  background: black;
+}
+
+@media screen and (max-width: 767px) {
+  .icon-bar {
+    display: none; /* Hide the icon bar on mobile devices */
+  }
+}
+
+/*mobile view icons*/
+
+.social-mobile {
+  display: flex; 
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  max-width: 32rem;
+  padding: 0;
+}
+
+.social-icons {
+  display: inline-block;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media screen and (max-width: 767px) {
+  .social-mobile {
+    display: flex; /* Display the container on mobile devices */
+  }
+}
+
+@media screen and (min-width: 767.1px) {
+  .social-mobile{
+    display: none; /*hides icons in anything above mobile size*/
+  }
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: end;
+  padding-top: 1.2rem;
+  font-size: 0.5rem;
+}
+
+footer a {
+  text-decoration: none;
+}
