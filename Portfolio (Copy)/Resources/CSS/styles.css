@@ -330,33 +330,78 @@ footer a {
 .all-projects {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  
-  max-width: 80%;
+  justify-content: center;
+  gap:40px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .project-overview {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
+  flex: 1 1 100%; 
+  max-width: 600px;
+  background: #211c35;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
-  max-width: 25%;
-  padding-top: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+  animation: fadeIn 0.6s ease-in-out;
+  opacity: 0.8;
+}
+
+.project-overview:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .img-containers {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  margin: 20px auto;
 }
 
 .project-img {
-  border-radius: 10%;
-  max-height: 200px;
-  max-width: 200px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-img:hover {
+  transform: scale(1.05);
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2)
 }
