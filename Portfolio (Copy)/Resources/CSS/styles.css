@@ -28,118 +28,110 @@ body {
     line-height: 1.5;
 }
 
-/*nav styling*/
+/* NAVIGATION BAR */
 .nav-bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  justify-content: flex-end;
-}
-
-nav ul {
+  background-color: #211c35;
   display: flex;
-  justify-items: flex-end;
-  text-align: right;
-  list-style-type: none;
-
-
+  justify-content: space-between; /* Space out hamburger and links */
+  align-items: center;
+  padding: 15px 20px;
+  z-index: 1000;
 }
 
-nav ul li {
-  display: inline-block;
+/* NAVIGATION LINKS (VISIBLE IN FULL SCREEN) */
+.nav-links {
+  display: flex; /* Ensure it's visible on larger screens */
 }
 
-nav ul li a {
- 
-  color: white;
-  padding: 0.5em 1em;
-  text-decoration: none;
-
-}
-
-nav {
-  
-  color: white;
+.nav-links ul {
   display: flex;
   justify-content: flex-end;
-  text-align: right;
-  padding: 20px 10px;
-
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-nav a {
-  color: var(--main-color1);
+.nav-links ul li {
+  margin: 0 10px;
+}
+
+.nav-links ul li a {
+  color: white;
   text-decoration: none;
-  margin-right: 10px;
-  display: inline-block; 
-  padding: 5px 10px;
-  
+  padding: 10px 15px;
+  font-size: 18px;
 }
 
-nav a:hover {
-  color: var(--main-color2);
-
+/* HAMBURGER MENU */
+.hamburger {
+  display: none; /* Hidden in full screen */
 }
 
-/*nav mobile view*/
-
+/* MOBILE VIEW: HIDE NAV, SHOW HAMBURGER */
 @media screen and (max-width: 767px) {
   .nav-bar {
+    justify-content: space-between; /* Ensure spacing */
+    padding: 15px;
+  }
+
+  /* Make the hamburger fully visible */
+  .hamburger {
     display: flex;
-    justify-content: flex-end; /* Aligns items to the right */
-    align-items: center;
-    background-color: #333; /* Example background color */
-    color: white; /* Example text color */
-    padding: 10px 20px;
-  }
-  
-  .nav-links {
-    display: none; /* Hide nav-links by default on mobile */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
     position: absolute;
-    top: 100%; /* Position below the navbar */
-    right: 0; /* Align to the right */
-    background-color: #333; /* Same background color as navbar */
-    z-index: 1000; /* Ensure it's above other content */
+    right: 20px; /* Ensure it's fully visible */
+    top: 15px; /* Adjust to align better */
   }
-  
+
+  .hamburger div {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+
+  /* NAV MENU: Drop-down style instead of full screen */
+  .nav-links {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    position: absolute;
+    top: 50px; /* Position below navbar */
+    right: 0;
+    width: 100%;
+    background: #211c35;
+    text-align: right;
+    padding: 10px 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999; /* Ensure it appears above content */
+  }
+
   .nav-links.open {
-    display: block; /* Display nav-links when .open class is added */
+    display: flex;
   }
-  
+
   .nav-links ul {
-    list-style-type: none;
-    margin: 0;
+    flex-direction: column;
+    width: 100%;
     padding: 0;
   }
-  
+
   .nav-links ul li {
-    margin: 10px 0; /* Adjust spacing between menu items */
+    margin: 10px 0;
   }
-  
+
   .nav-links ul li a {
     display: block;
     color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-  }
-  
-  /* Hamburger Icon */
-  .hamburger {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 5px 0;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .hamburger .fa-bars {
-    color: white; /* Ensure the icon color matches your design */
-  }
-  
-  .hamburger.open .fa-bars {
-    transform: rotate(90deg); /* Example animation for the hamburger icon */
+    padding: 10px;
+    font-size: 16px;
+    text-align: right;
   }
 }
 
@@ -224,8 +216,8 @@ nav a:hover {
 
 img {
  border-radius: 50%;
- max-height: 560px;
- max-width: 315px;
+ max-height: 300px;
+ max-width: 200px;
 }
 
 .icon-bar {
