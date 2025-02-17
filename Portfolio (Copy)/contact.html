@@ -30,48 +30,42 @@
     </nav>
     <!--title section-->
     <div class="title">
-        <h1>Hey, I'm Lee, aspiring Web Developer</h1>
+        <h1>Contact Me!</h1>
     </div>
    <!--socials side bar-->
    <div class="icon-bar">
-    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-    <a href="#" class="google"><i class="fa fa-google"></i></a>
     <a href="https://www.linkedin.com/in/lee-duxbury-798283110/" class="linkedin"><i class="fa fa-linkedin"></i></a>
-    <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
   </div>
    <!--about me section-->
     <div class="about">
-        <p>After many years of wondering what I wanted to do, I stumbled across coding, web-development in particular. I was immediately drawn in by it, the problem solving, the creative license and how it got me into the flow state so easily.
-        Since my discovery I have been completing codecademy courses and testing my skills with various coding challenges. My ultimate goal is to transition my career from constuction projects to web-development.</p>
+        <p>Let's work together! Reach out and let me know about available opportunities.</p>
     </div>
-   <!--skills section--> 
-    <div class="skills">
-        <div class="sd">
-          <p>I have aquired knowledge and competency in HTML, CSS, javaScript along with knowledge of libraries such as React and Redux.
-             I have also gained knowledge and competency in the utilisation of Git Bash and Git Hub for the implementation of version control.</p>
-        </div>
-        <div class="icons">
-            <i class="fa-brands fa-html5"></i>
-            <i class="fa-brands fa-css3-alt"></i>
-            <i class="fa-brands fa-js"></i>
-            <i class="fa-brands fa-react"></i>
-            <i class="fa-brands fa-git-alt"></i>
-            <i class="fa-brands fa-github"></i>
-        </div>
+   <!--contact form--> 
+   <div class="contact-form">
+    <h2>Contact Me</h2>
+    <form id="contact-form" name="contact-form" method="POST" data-netlify="true">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <p class="error" id="name-error"></p>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <p class="error" id="email-error"></p>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+        <p class="error" id="message-error"></p>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+    <div id="thank-you-message" class="thank-you-message" style="display: none;">
+      <h3>Thank you for reaching out! I'll get back to you soon.</h3>
     </div>
-   <!--image-->
-    <div class="image">
-         <img src="./Resources/images/profilepic.jpeg" alt="imgage of Lee Duxbury">
-
-    </div> 
-    <div class="social-mobile">
-      <div class="social-icons">
-        <i id = "cm_f" class="fa fa-facebook" aria-hidden="true"></i>
-        <i id = "cm_ins" class="fa fa-instagram" aria-hidden="true"></i>
-        <i id = "cm_pin" class="fa fa-pinterest-p" aria-hidden="true"></i>
-        <i id = "cm_tube" class="fa fa-youtube" aria-hidden="true"></i>
-    </div>  
+  </div>
+   
     </div>
   <footer>
     <p>Backgruond designed by: <a href="https://www.freepik.com/free-vector/gradient-black-background-with-wavy-lines_20248671.htm#fromView=search&page=1&position=3&uuid=585477c9-2588-4882-bb7c-1a9785fb73a6">Image by freepik</a>

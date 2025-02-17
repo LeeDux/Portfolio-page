@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 html{
  font-size: 16px;
  font-family: "League Spartan", sans-serif;
@@ -21,35 +25,44 @@ body {
     flex-direction: column;
     background-image: url('../images/6221822.jpg');
     margin: 0 auto;
+    margin-top: 60px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
     line-height: 1.5;
+    transition: margin-top 0.3s ease-in-out;
+    overflow-x: hidden;
+    
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* NAVIGATION BAR */
 .nav-bar {
-  position: fixed;
+  position: static;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #211c35;
+  
   display: flex;
-  justify-content: space-between; /* Space out hamburger and links */
+  justify-content: flex-end; 
   align-items: center;
   padding: 15px 20px;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
 /* NAVIGATION LINKS (VISIBLE IN FULL SCREEN) */
 .nav-links {
-  display: flex; /* Ensure it's visible on larger screens */
+  display: flex; 
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .nav-links ul {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -68,13 +81,17 @@ body {
 
 /* HAMBURGER MENU */
 .hamburger {
-  display: none; /* Hidden in full screen */
+  display: none; 
 }
 
 /* MOBILE VIEW: HIDE NAV, SHOW HAMBURGER */
 @media screen and (max-width: 767px) {
+  body {
+    overflow-x: hidden; 
+  }
+
   .nav-bar {
-    justify-content: space-between; /* Ensure spacing */
+    justify-content: space-between; 
     padding: 15px;
   }
 
@@ -85,8 +102,24 @@ body {
     cursor: pointer;
     padding: 10px;
     position: absolute;
-    right: 20px; /* Ensure it's fully visible */
-    top: 15px; /* Adjust to align better */
+    right: 20px; 
+    top: 15px; 
+    z-index: 1001;
+  }
+
+  .hamburger i {
+    font-size: 24px;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hamburger.open i {
+  transform: rotate(180deg); 
+  }
+
+  .fa-solid, .fas {
+    font-weight: 900;
+    padding-right: 10px;
   }
 
   .hamburger div {
@@ -99,17 +132,19 @@ body {
 
   /* NAV MENU: Drop-down style instead of full screen */
   .nav-links {
-    display: none; /* Hide by default */
+    display: none; 
     flex-direction: column;
-    position: absolute;
-    top: 50px; /* Position below navbar */
+    position: fixed;
+    top: 0; 
     right: 0;
-    width: 100%;
-    background: #211c35;
-    text-align: right;
-    padding: 10px 20px;
+    width: 40%;
+    height: 100%;
+    background: #020726;
+    opacity: 0.8;
+    text-align: center;
+    padding: 10px 0;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    z-index: 999; /* Ensure it appears above content */
+    z-index: 999; 
   }
 
   .nav-links.open {
@@ -118,8 +153,9 @@ body {
 
   .nav-links ul {
     flex-direction: column;
-    width: 100%;
-    padding: 0;
+    margin-top: 60px;
+    width: 95%;
+    padding-right: 20px;
   }
 
   .nav-links ul li {
@@ -131,6 +167,7 @@ body {
     color: white;
     padding: 10px;
     font-size: 16px;
+    font-weight: 600;
     text-align: right;
   }
 }
@@ -158,8 +195,10 @@ body {
   align-items: center;
   justify-content: space-around;
   text-align: center;
-  max-width: 32rem;
+  width: 50%;
+  max-width: 100%;
   padding-top: 0.5rem;
+  box-sizing: border-box;
 }
 
 .about p {
@@ -191,6 +230,26 @@ body {
   padding: 0;
 }
 
+@media screen and (max-width: 767px) {
+  .title h1 {
+    font-weight: 800;
+    font-family: 12px;
+  }
+
+  .title {
+    width: 80%;
+    padding-top: 0;
+  }
+
+  .about {
+    width: 80%;
+  }
+
+  .skills {
+    width: 80%;
+  }
+}
+
 .icons {
     display: flex;
     flex-wrap: wrap;
@@ -214,36 +273,36 @@ body {
     padding-top: 0.62rem;
 }
 
-img {
+.image img {
  border-radius: 50%;
- max-height: 300px;
- max-width: 200px;
+ max-width: 300px;
+ height: auto;
 }
 
 .icon-bar {
   position: fixed;
-  top: 50%; /* Vertically center the bar */
-  left: 0; /* Align the bar to the left side of the screen */
+  top: 50%; 
+  left: 0; 
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  background-color: #333; /* Example background color */
+  background-color: #333; 
 }
 
 /* Style the icon bar links */
 .icon-bar a {
   display: block;
-  text-align: center; /* Center align text within the links */
+  text-align: center; 
   padding: 16px;
   transition: all 0.3s ease;
   color: white;
   font-size: 20px;
-  text-decoration: none; /* Remove underline from links */
+  text-decoration: none; 
 }
 
 /* Style the social media icons with color */
 .icon-bar a:hover {
-  background-color: #000; /* Darken background color on hover */
+  background-color: #000; 
 }
 
 /* Individual social media styles */
@@ -269,7 +328,7 @@ img {
 
 @media screen and (max-width: 767px) {
   .icon-bar {
-    display: none; /* Hide the icon bar on mobile devices */
+    display: none; 
   }
 }
 
@@ -294,13 +353,13 @@ img {
 
 @media screen and (max-width: 767px) {
   .social-mobile {
-    display: flex; /* Display the container on mobile devices */
+    display: flex; 
   }
 }
 
 @media screen and (min-width: 767.1px) {
   .social-mobile{
-    display: none; /*hides icons in anything above mobile size*/
+    display: none; 
   }
 }
 
@@ -311,6 +370,7 @@ footer {
   align-items: end;
   padding-top: 1.2rem;
   font-size: 0.5rem;
+  overflow-x: hidden;
 }
 
 footer a {
@@ -322,17 +382,19 @@ footer a {
 .all-projects {
   display: flex;
   flex-wrap: wrap;
+  overflow-x: hidden;
   justify-content: center;
-  gap:40px;
-  width: 100%;
-  margin: 0 auto;
+  max-width: 100%;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .project-overview {
-  flex: 1 1 100%; 
-  max-width: 600px;
-  background: #211c35;
+  flex: 1 1 auto; 
+  max-width: 100%;
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+  background: #020726;
   color: white;
   padding: 20px;
   border-radius: 10px;
@@ -341,11 +403,15 @@ footer a {
   transition: transform 0.3s ease-in-out;
   animation: fadeIn 0.6s ease-in-out;
   opacity: 0.8;
+  margin: 10px 0;
+  margin-top: 10px;
 }
 
 .project-overview:hover {
   transform: scale(1.05);
 }
+
+
 
 @keyframes fadeIn {
   from {
@@ -369,8 +435,9 @@ footer a {
 
 .project-img {
   border-radius: 10px;
+  max-width: 100%;
   width: 100%;
-  height: 300px;
+  height: auto;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
 }
@@ -384,7 +451,8 @@ footer a {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 500px;           
+  max-width: 100%;  
+  height: auto;         
   margin: 20px auto; 
 }
 
@@ -396,12 +464,186 @@ footer a {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2)
 }
 
+@media (min-width: 1024px) { 
+  .all-projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;
+  }
+
+  .project-overview {
+    flex: 1 1 calc(33.33% - 40px); 
+    max-width: calc(33.33% - 40px);
+  }
+}
+
 @media (max-width: 767px) {
   .img-containers, .video-container {
     max-width: 100%;
+    width: 100%;
   }
 
   .project-img, .video-container iframe {
-    height: 200px;
+    height: auto;
+  }
+}
+
+/*contact-form*/
+.contact-form {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #020726;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+#contact-form {
+  width: 100%
+}
+
+/* Ensure other elements around the contact form do not interfere with width */
+.title, .about {
+  text-align: center;
+}
+
+.contact-form h2 {
+  text-align: center;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%; 
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  display: block;
+  width: 100%; 
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-form .error {
+  color: red;
+  font-size: 12px;
+}
+
+.thank-you-message {
+  text-align: center;
+  font-size: 18px;
+  color: green;
+}
+
+@media only screen and (max-width: 768px) {
+  .contact-form {
+    max-width: 100%; 
+    padding: 15px; 
+  }
+
+  .contact-form h2 {
+    font-size: 1.5em; 
+  }
+
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px; 
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    padding: 12px; 
+  }
+
+  .contact-form button {
+    font-size: 16px; 
+  }
+
+  .contact-form textarea {
+    height: 120px; 
+  }
+}
+
+/* Even smaller screens (mobile phones in portrait mode) */
+@media only screen and (max-width: 480px) {
+  .contact-form {
+    max-width: 95%; 
+    padding: 10px; 
+  }
+
+  .contact-form h2 {
+    font-size: 1.3em; 
+  }
+
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 13px; 
+    
+  }
+
+  .contact-form button {
+    padding: 15px;
+  }
+
+  .contact-form button {
+    font-size: 14px; 
+  }
+}
+
+/* For very small screens (old phones/tablets) */
+@media only screen and (max-width: 320px) {
+  .contact-form {
+    max-width: 100%; 
+    padding: 8px; 
+  }
+
+  .contact-form h2 {
+    font-size: 1.2em; 
+  }
+
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 12px; 
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    padding: 10px; 
   }
 }
